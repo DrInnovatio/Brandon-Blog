@@ -4,11 +4,18 @@ import { Context } from '../context/BlogContext';
 import { Feather } from '@expo/vector-icons';
 
 const IndexScreen = ({ navigation }) => {
-
   const { state, deleteBlogPost, getBlogPosts } = useContext(Context);
 
-  useEffecr(() => {
+  useEffect(() => {
     getBlogPosts();
+
+    const listener = navigation.addListener('didFocus', () => {
+      getBlogPosts();
+    });
+
+    return () => {
+      listener.remove();
+    };
   }, [])
 
   return (
