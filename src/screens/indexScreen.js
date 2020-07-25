@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 10,
     borderTopWidth: 1,
-    borderColor: 'gray'
+    borderColor: 'blue'
   },
   title: {
     fontSize: 18
